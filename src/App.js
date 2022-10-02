@@ -13,7 +13,6 @@ const App = () => {
 	useEffect(() => {
 		dispatch(getPosts());
 	}, [dispatch]);
-
 	return (
 		<Container maxWidth="lg">
 			<AppBar style={styles.appBar} position="static" color="inherit">
@@ -33,8 +32,9 @@ const App = () => {
 						<Grid item xs={12} sm={7}>
 							<Posts />
 						</Grid>
-						<Form />
-						<Grid item xs={12} sm={4}></Grid>
+						<Grid item xs={12} sm={4}>
+							<Form />
+						</Grid>
 					</Grid>
 				</Container>
 			</Grow>

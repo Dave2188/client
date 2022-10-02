@@ -1,13 +1,13 @@
-import { createTheme } from "@mui/material/styles";
+import { Theme } from "@emotion/styled";
 
-createTheme((theme) => ({
+export const formTheme = {
 	root: {
-		"& .MuiTextField-root": {
-			margin: theme.spacing(1),
+		"& .MuiOutlinedInput-root": {
+			margin: "8px",
 		},
 	},
 	paper: {
-		padding: theme.spacing(2),
+		padding: "16px",
 	},
 	form: {
 		display: "flex",
@@ -15,12 +15,10 @@ createTheme((theme) => ({
 		justifyContent: "center",
 	},
 	fileInput: {
-		width: "97%",
-		margin: "10px 0",
+		width: "100%",
+		margin: "10px, 0",
 	},
 	buttonSubmit: {
 		marginBottom: 10,
 	},
-}));
-
-export { createTheme };
+};

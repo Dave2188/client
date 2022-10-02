@@ -1,16 +1,12 @@
-import { createTheme } from "@mui/material/styles";
-
-createTheme((theme) => ({
+export const postsTheme = {
 	mainContainer: {
 		display: "flex",
 		alignItems: "center",
 	},
 	smMargin: {
-		margin: theme.spacing(1),
+		margin: "8px",
 	},
 	actionDiv: {
 		textAlign: "center",
 	},
-}));
-
-export { createTheme };
+};

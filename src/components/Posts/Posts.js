@@ -1,12 +1,11 @@
 import React from "react";
 import Post from "./Post/post.js";
-import { createTheme } from "./styles";
+import { postsTheme } from "./styles";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@mui/material/styles";
 
 const Posts = () => {
 	const posts = useSelector((state) => state.posts);
-	const postsTheme = createTheme();
 
 	console.log(posts);
 

@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-createTheme({
+export const postTheme = createTheme({
 	media: {
 		height: 0,
 		paddingTop: "56.25%",
@@ -50,5 +50,3 @@ createTheme({
 		justifyContent: "space-between",
 	},
 });
-
-export { createTheme };
