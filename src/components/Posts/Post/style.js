@@ -1,7 +1,5 @@
 export const styles = {
 	media: {
-		height: 0,
-		paddingTop: "56.25%",
 		backgroundColor: "rgba(0, 0, 0, 0.5)",
 		backgroundBlendMode: "darken",
 	},
@@ -25,6 +23,12 @@ export const styles = {
 		left: "20px",
 		color: "white",
 	},
+	overlay3: {
+		position: "absolute",
+		top: "50px",
+		left: "20px",
+		color: "white",
+	},
 	overlay2: {
 		position: "absolute",
 		top: "20px",
@@ -37,7 +41,8 @@ export const styles = {
 	details: {
 		display: "flex",
 		justifyContent: "space-between",
-		margin: "20px",
+		margin: "5px",
+		marginLeft: "10px",
 	},
 	title: {
 		padding: "0 16px",

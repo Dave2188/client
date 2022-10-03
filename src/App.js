@@ -27,7 +27,7 @@ const App = () => {
 					<img style={styles.image} src={memories} alt="memories" height="60" />
 				</AppBar>
 				<Grow in>
-					<Container>
+					<Container sx={{ justifyContent: "space-between" }}>
 						<Grid
 							container
 							justify="space-between"

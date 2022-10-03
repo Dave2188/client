@@ -13,46 +13,59 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import moment from "moment";
 import { styles } from "./style";
 import { title } from "process";
+import { createTheme } from "@mui/material/styles";
 
 const Post = ({ post }) => {
 	const creator = post.creator;
 	creator.toString();
 	const time = moment(post.createdAt);
+	const style = styles;
 
 	return (
-		<Card sx={styles.card}>
+		<Card sx={style.card}>
 			<CardMedia
 				component="img"
-				className={styles.media}
-				image={`${post.selectedFile}`}
+				height="200"
+				sx={style.media}
+				image={
+					post.selectedFile != " "
+						? `${post.selectedFile}`
+						: "https://picsum.photos/200/300"
+				}
 				title={post.title}
 			/>
-			<div sx={styles.overlay}>
-				<Typography variant="h6" component="h6">
+			<div>
+				<Typography sx={style.overlay} variant="h6" component="h6">
 					{creator}
 				</Typography>
-				<Typography variant="body2">{time.fromNow()}</Typography>
+				<Typography sx={style.overlay3} variant="body2">
+					{time.fromNow()}
+				</Typography>
 			</div>
-			<div sx={styles.overlay2}>
-				<Button style={{ color: "black" }} size="small" onClick={() => {}}>
+			<div>
+				<Button
+					sx={style.overlay2}
+					style={{ color: "white" }}
+					size="small"
+					onClick={() => {}}
+				>
 					<MoreHorizIcon fontSize="medium" />
 				</Button>
 			</div>
-			<div sx={styles.details}>
-				<Typography variant="body2" color="textSecondary">
+			<div>
+				<Typography sx={style.details} variant="body2" color="textSecondary">
 					{post.tags.map((tag) => `#${tag} `)}
 				</Typography>
 			</div>
 			<CardContent>
-				<Typography sx={styles.title} variant="h5" gutterBottom>
+				<Typography sx={style.title} variant="h5" gutterBottom>
 					{post.message}
 				</Typography>
 			</CardContent>
-			<CardActions sx={styles.cardActions}>
+			<CardActions sx={style.cardActions}>
 				<Button size="small" color="primary" onClick={() => {}}>
 					<ThumbUpAltIcon fontSize="small" />
-					Like
-					{post.likeCount}
+					Like {post.likeCount}
 				</Button>
 				<Button size="small" color="primary" onClick={() => {}}>
 					<DeleteIcon fontSize="small" />
