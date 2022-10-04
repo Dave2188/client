@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, AppBar, Typography, Grow, Grid } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import memories from "./images/memories.png";
@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { getPosts } from "./actions/posts";
 
 const App = () => {
+	const [currentId, setCurrentId] = useState(null);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -27,18 +28,18 @@ const App = () => {
 					<img style={styles.image} src={memories} alt="memories" height="60" />
 				</AppBar>
 				<Grow in>
-					<Container sx={{ justifyContent: "space-between" }}>
+					<Container>
 						<Grid
 							container
-							justify="space-between"
+							justifyContent="space-between"
 							alignItems="stretch"
 							spacing="3"
 						>
 							<Grid item xs={12} sm={7}>
-								<Posts />
+								<Posts setCurrentId={setCurrentId} />
 							</Grid>
 							<Grid item xs={12} sm={4}>
-								<Form />
+								<Form currentId={currentId} setCurrentId={setCurrentId} />
 							</Grid>
 						</Grid>
 					</Container>

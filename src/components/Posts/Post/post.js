@@ -15,7 +15,7 @@ import { styles } from "./style";
 import { title } from "process";
 import { createTheme } from "@mui/material/styles";
 
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
 	const creator = post.creator;
 	creator.toString();
 	const time = moment(post.createdAt);
@@ -47,7 +47,7 @@ const Post = ({ post }) => {
 					sx={style.overlay2}
 					style={{ color: "white" }}
 					size="small"
-					onClick={() => {}}
+					onClick={() => setCurrentId(post._id)}
 				>
 					<MoreHorizIcon fontSize="medium" />
 				</Button>
