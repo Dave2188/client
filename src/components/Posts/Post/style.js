@@ -43,6 +43,7 @@ export const styles = {
 		justifyContent: "space-between",
 		margin: "5px",
 		marginLeft: "10px",
+		paddingBottom: 1,
 	},
 	title: {
 		padding: "0 16px",

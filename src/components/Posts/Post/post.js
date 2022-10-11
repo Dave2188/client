@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	Card,
-	CardActions,
-	CardContent,
-	CardMedia,
-	Button,
-	Typography,
-} from "@mui/material";
+import { Card, CardActions, CardContent, CardMedia, Button, Typography } from "@mui/material";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DeleteIcon from "@mui/icons-material/Delete";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -27,11 +20,7 @@ const Post = ({ post, setCurrentId }) => {
 				component="img"
 				height="200"
 				sx={style.media}
-				image={
-					post.selectedFile != " "
-						? `${post.selectedFile}`
-						: "https://picsum.photos/200/300"
-				}
+				image={post.selectedFile != " " ? `${post.selectedFile}` : "https://picsum.photos/200/300"}
 				title={post.title}
 			/>
 			<div>
@@ -43,12 +32,7 @@ const Post = ({ post, setCurrentId }) => {
 				</Typography>
 			</div>
 			<div>
-				<Button
-					sx={style.overlay2}
-					style={{ color: "white" }}
-					size="small"
-					onClick={() => setCurrentId(post._id)}
-				>
+				<Button sx={style.overlay2} style={{ color: "white" }} size="small" onClick={() => setCurrentId(post.id)}>
 					<MoreHorizIcon fontSize="medium" />
 				</Button>
 			</div>
@@ -57,8 +41,11 @@ const Post = ({ post, setCurrentId }) => {
 					{post.tags.map((tag) => `#${tag} `)}
 				</Typography>
 			</div>
+			<Typography sx={style.title} variant="h5" gutterBottom>
+				{post.title}
+			</Typography>
 			<CardContent>
-				<Typography sx={style.title} variant="h5" gutterBottom>
+				<Typography variant="h5" gutterBottom>
 					{post.message}
 				</Typography>
 			</CardContent>

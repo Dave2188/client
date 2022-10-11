@@ -24,11 +24,26 @@ const Form = ({ setCurrentId, currentId }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (currentId) dispatch(updatePost(currentId, postData));
-		dispatch(createPost(postData));
+
+		if (currentId) {
+			dispatch(updatePost(currentId, postData));
+		} else {
+			dispatch(createPost(postData));
+		}
+
+		clear();
 	};
 
-	const clear = () => {};
+	const clear = () => {
+		setCurrentId(null);
+		setPostData({
+			creator: " ",
+			title: " ",
+			message: " ",
+			tags: " ",
+			selectedFile: " ",
+		});
+	};
 
 	return (
 		<ThemeProvider theme={classes}>
