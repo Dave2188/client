@@ -11,13 +11,8 @@ const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 const store = createStoreWithMiddleware(
 	reducers,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
-
-// const store = createStore(
-// 	reducers,
-// 	compose(applyMiddleware(thunk), composeWithDevTools())
-// );
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -25,7 +20,7 @@ const root = createRoot(container);
 root.render(
 	<Provider store={store}>
 		<App tab="home" />
-	</Provider>
+	</Provider>,
 );
 
 // ReactDOM.render(<App />, document.getElementById("root"));
